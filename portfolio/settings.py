@@ -3,6 +3,8 @@ import dj_database_url  # إذا كنت تستخدم Railway DB
 
 from pathlib import Path
 
+
+PORT = os.environ.get("PORT", "8000")
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
