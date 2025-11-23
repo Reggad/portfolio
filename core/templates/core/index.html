@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>imo</title>
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
+</head>
+<body>
+
+  <header class="header" >
+       <h1 class="logo"><a href="#home">imo</a></h1>
+       <nav class="nave">
+       <ul>
+            
+            <li><a href="#contact" >Contact</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#follow">Follow</a></li>
+        </ul></nav>
+  </header>
+ <section class="autoshow" id="home">
+  
+  <div class="model-container">
+    <model-viewer 
+      src="{% static 'models/pc.glb' %}" 
+      alt="3D Developer Robot"
+      auto-rotate 
+      camera-controls 
+      style="width: 400px; height: 400px; background: transparent;">
+    </model-viewer>
+  </div>
+
+  <div class="info">
+    <h2 class="typing" id="typingText"></h2>
+
+    <p>
+     Full-stack developer passionate about modern web technologies. I work with Django on the backend and React + Three.js on the frontend to build fast, interactive, and visually engaging applications that deliver real
+    </p>
+    <button class="btn">Contact Me</button>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+<section  class="words" >
+
+  <p class="autoBlur">Hi i'm imo</p>
+  <p class="autoBlur">A Full-Stak devoloper</p>
+  <p class="autoBlur">Enjoy with my projects</p>
+  <p class="autoBlur">You'll never get bored</p>
+  
+</section>
+
+<div class="banner" id="projects">
+<div class="slide" style="--quantity: 10">
+<div class="item" style="--position: 1"><img src="{% static 'images/p1.jpg' %}" alt=""></div>
+<div class="item" style="--position: 2"><img src="{% static 'images/p1.jpg' %}" alt=""></div>
+<div class="item" style="--position: 3"><img src="{% static 'images/p1.jpg' %}" alt=""></div>
+<div class="item" style="--position: 4"><img src="{% static 'images/p1.jpg' %}" alt=""></div>
+<div class="item" style="--position: 5"><img src="{% static 'images/p1.jpg' %}" alt=""></div>
+<div class="item" style="--position: 6"><img src="{% static 'images/p1.jpg' %}" alt=""></div>
+<div class="item" style="--position: 7"><img src="{% static 'images/p1.jpg' %}" alt=""></div>
+<div class="item" style="--position: 8"><img src="{% static 'images/p1.jpg' %}" alt=""></div>
+<div class="item" style="--position: 9"><img src="{% static 'images/p1.jpg' %}" alt=""></div>
+<div class="item" style="--position: 10"><img src="{% static 'images/p1.jpg' %}" alt=""></div>
+</div>
+</div>
+<section class="words" >
+
+  <p class="autoBlur">I made this </p>
+  <p class="autoBlur">Using many skills</p>
+  <p class="autoBlur">I'll show you the skills</p>
+  <p class="autoBlur">That using before</p>
+  
+</section>
+<section class="skills" id="skills">
+  <h2>Skills</h2>
+<div class="icons">
+  
+  <div class="icon html" style="--i:0">
+    <img src="{% static 'icons/html5.svg' %}" alt="HTML">
+    <span>HTML</span>
+  </div>
+
+  <div class="icon css" style="--i:1">
+    <img src="{% static 'icons/css.svg' %}" alt="CSS">
+    <span>CSS</span>
+  </div>
+
+  <div class="icon js" style="--i:2">
+    <img src="{% static 'icons/django.svg' %}" alt="JavaScript">
+    <span>JavaScript</span>
+  </div>
+
+  <div class="icon python" style="--i:3">
+    <img src="{% static 'icons/python.svg' %}" alt="Python">
+    <span>Python</span>
+  </div>
+
+  <div class="icon django" style="--i:4">
+    <img src="{% static 'icons/jss.svg' %}" alt="Django">
+    <span>Django</span>
+  </div>
+
+</div>
+
+</section>
+
+<section  class="words"  >
+  <h2 >THE END</h2>
+<p>follow me i will be happy</p>
+
+</section>
+<div class="social-bar" id="follow">
+    <a href="https://www.facebook.com/share/1EwYT34eJ2/" class="icon fb"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/reggad_aymen?igsh=MXBxM2VhMjVxZ2k1Yw==" class="icon ig"><i class="fab fa-instagram"></i></a>
+    <a href="https://github.com/Reggad" class="icon gh"><i class="fab fa-github"></i></a>
+</div>
+
+ 
+<!-- زر فتح الشات -->
+<button id="openChatBtn" class="chat-open-btn">💬</button>
+
+<!-- صندوق الشات -->
+<div class="chat-container" id="chatWrapper">
+
+    <div class="chat-header">
+        <span>Chat</span>
+        <button id="closeChatBtn" class="close-btn">✖</button>
+    </div>
+
+    <!-- شاشة البداية -->
+    <div class="start-screen" id="startScreen">
+        <h3>Welcome</h3>
+
+        <input type="text" id="clientName" placeholder="Your Name">
+        <input type="email" id="clientEmail" placeholder="Your Email">
+
+        <button onclick="startChat()">Start Chat</button>
+    </div>
+
+    <!-- المحادثة -->
+    <div class="chat-box" id="chatBox">
+        <div class="messages" id="messages"></div>
+
+        <div class="input-area">
+            <input type="text" id="messageInput" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+  <footer class="footer">
+    <p>&copy; 2025 PortFolio</p>
+  </footer>
+
+
+<script>
+  const csrftoken = "{{ csrf_token }}";
+  const conversationId = "{{ conversation_id }}";
+</script>
+
+<script src="{% static 'js/chat.js' %}"></script>
+
+</body>
+</html>
